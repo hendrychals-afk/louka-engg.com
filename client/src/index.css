@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #f5f8ff;
+    color: #10223a;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Glassmorphism and custom card gradients */
+.glass-header {
+  background: rgba(6, 25, 44, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.hero-gradient {
+  background: radial-gradient(circle at 50% 30%, rgba(29, 91, 214, 0.25), transparent 70%),
+              linear-gradient(145deg, #06192c 0%, #0a2540 50%, #071d38 100%);
+}
+
+.loader-gradient {
+  background: radial-gradient(circle at 50% 42%, rgba(29, 91, 214, 0.3), transparent 30%),
+              linear-gradient(145deg, #06192c, #0a2540 55%, #071d38);
+}
